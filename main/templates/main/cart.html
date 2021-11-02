@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Суші, Піца, Бургер - Головна сторінка</title>
+	<link rel="stylesheet" type="text/css" href="static/main/css/main.css">
+	<link rel="stylesheet" type="text/css" href="static/main/css/cartstyle.css">
+	<link rel="stylesheet" type="text/css" href="static/main/css/cart.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="static/main/img/logo.jpg">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<nav class="main_menu">
+				<img class="logo" src="static/main/img/logo.jpg">
+				<ul>
+					<li><a href="{% url 'home' %}">Головна</a></li>
+					<li><a href="#">Доставка</a></li>
+					<li><a href="#">Про нас</a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
+				</ul>
+				<div class="searchMain">
+                    <i class="fas fa-search"></i>
+                    <input class="search" type="search" placeholder="Пошук...">
+                </div>
+				<button class="cart-shop" onclick='window.location.href = "cart.html"'><i class="shop fab fa-shopify"></i></button>
+			</nav>
+		</header>
+		<!-- Товар #1 -->
+      <div class="item">
+
+      	<div class="buttons">
+          <span class="delete-btn"></span>
+        </div>
+ 
+        <div class="image">
+          <img src="static/main/img/food/PizzaPepperoni.jpg" alt="" />
+        </div>
+ 
+        <div class="description">
+          <span>Піца "Пепероні"</span>
+          <span>Склад: тісто для піци, сир моцарела, сирокопчена ковбаса, перець чилі, помідори у власному соку.</span>
+        </div>
+ 
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">+</button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">-</button>
+        </div>
+ 
+        <div class="total-price">Ціна: 149 грн.</div>
+      </div>
+ 
+      <!-- Товар #2 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+        </div>
+ 
+        <div class="image">
+          <img src="static/main/img/food/coca-cola.jpg" alt=""/>
+        </div>
+ 
+        <div class="description">
+          <span>Coca-cola</span>
+          <span></span>
+          <span></span>
+        </div>
+ 
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">+</button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">-</button>
+        </div>
+ 
+        <div class="total-price">Ціна: 35 грн.</div>
+      </div>
+ 
+      <!-- Товар #3 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+        </div>
+ 
+        <div class="image">
+          <img src="static/main/img/food/Tea.jpg" alt="" />
+        </div>
+ 
+        <div class="description">
+          <span>Чай</span>
+          <span></span>
+          <span></span>
+        </div>
+ 
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">+</button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">-</button>
+        </div>
+ 
+        <div class="total-price">Ціна: 20 грн.</div>
+      </div>
+
+      <div class="summa">До оплати: <span id="total-cart-summa">204</span> грн.</div>
+      <br>
+      <button id="order" class="button-order">Оформити замовлення</button>
+    </div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+	</script>
+	<script>
+		$( document ).ready(function(){
+			$('.toggle_li').on('click', function(){
+				$('.menu_li').toggleClass('open');
+			})
+		})
+	</script>
+</body>
+</html>

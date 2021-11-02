@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Суші, Піца, Бургер - Головна сторінка</title>
+	<link rel="stylesheet" type="text/css" href="static/main/css/main.css">
+	<link rel="stylesheet" type="text/css" href="static/main/css/discountstyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="static/main/img/logo.jpg">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<nav class="main_menu">
+				<img class="logo" src="static/main/img/logo.jpg">
+				<ul>
+					<li><a href="{% url 'home' %}">Головна</a></li>
+					<li><a href="#">Доставка</a></li>
+					<li><a href="#">Про нас</a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
+				</ul>
+				<div class="searchMain">
+                    <i class="fas fa-search"></i>
+                    <input class="search" type="search" placeholder="Пошук...">
+                </div>
+				<button class="cart-shop" onclick='window.location.href = "{% url 'cart' %}"'><i class="fas fa-shopping-cart"></i></button>
+			</nav>
+		</header>
+			<section class="main">
+				<nav class="food_menu">
+					<ul>
+						<li class="toggle_li"><a><i class="fas fa-bars"></i> Меню</a></li>
+						<li class="menu_li"><a href="{% url 'discount' %}"><i class="fas fa-percent"></i> Акції</a></li>
+						<li class="menu_li"><a href="{% url 'pizza' %}"><i class="fas fa-pizza-slice"></i> Піца</a></li>
+						<li class="menu_li"><a href="{% url 'sushi' %}"><i class="fas fa-bacon"></i> Суші</a></li>
+						<li class="menu_li"><a href="{% url 'burger' %}"><i class="fas fa-hamburger"></i> Бургери</a></li>
+						<li class="menu_li"><a href="{% url 'drink' %}"><i class="fas fa-coffee"></i> Напої</a></li>
+					</ul>
+				</nav>
+				<div class="container-item">
+					<div class="item">
+						<div class="food_img">
+							<img src="static/main/img/food/PizzaMeatBoom.jpg">
+						</div>
+						<div class="info_food">
+							<p class="name_food">Піца "М'ясний бум"</p>
+							<p class="price">139 грн.<del>159 грн.</del></p>
+						</div>
+						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+					</div>
+					<div class="item">
+						<div class="food_img">
+							<img src="static/main/img/food/PizzaUkrainian.jpg">
+						</div>
+						<div class="info_food">
+							<p class="name_food">Піца "Українська"</p>
+							<p class="price">135 грн.<del>155 грн.</del></p>
+						</div>
+						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+					</div>
+					<div class="item">
+						<div class="food_img">
+							<img src="static/main/img/food/PizzaSeafood.jpg">
+						</div>
+						<div class="info_food">
+							<p class="name_food">Піца "Дари моря"</p>
+							<p class="price">165 грн.<del>199 грн.</del></p>
+						</div>
+						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+					</div>
+					<div class="item">
+						<div class="food_img">
+							<img src="static/main/img/food/PizzaCaesar.jpg">
+						</div>
+						<div class="info_food">
+							<p class="name_food">Піца "Цезар"</p>
+							<p class="price">155 грн.<del>175 грн.</del></p>
+						</div>
+						
+						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+					</div>
+					<div class="item">
+						<div class="food_img">
+							<img src="static/main/img/food/SushiPhiladelphia.jpg">
+						</div>
+						<div class="info_food">
+							<p class="name_food">Суші "Філадельфія"</p>
+							<p class="price">99 грн.<del>110 грн.</del></p>
+						</div>
+						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+					</div>
+					<div class="item">
+						<div class="food_img">
+							<img src="static/main/img/food/SushiCalifornia.jpg">
+						</div>
+						<div class="info_food">
+							<p class="name_food">Суші "Каліфорнія"</p>
+							<p class="price">95 грн.<del>109 грн.</del></p>
+						</div>
+						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+					</div>
+					<div class="item">
+						<div class="food_img">
+							<img src="static/main/img/food/BurgerStandart.jpg">
+						</div>
+						<div class="info_food">
+							<p class="name_food">Бургер "Стандарт"</p>
+							<p class="price">45 грн.<del>55 грн.</del></p>
+						</div>
+						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+					</div>
+					<div class="item">
+						<div class="food_img">
+							<img src="static/main/img/food/BurgerDouble.jpg">
+						</div>
+						<div class="info_food">
+							<p class="name_food">Бургер "Дабл"</p>
+							<p class="price">65 грн.<del>75 грн.</del></p>
+						</div>
+						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+					</div>
+				</div>
+		</section>
+	</div>
+	<footer>
+		<ul>
+			<li><a href="">380ХХХХХХХХХ </a></li>
+			<li><a href="">380ХХХХХХХХХ </a></li>
+			<li><a href="">ХХХХХХХ@gmail.com </a></li>
+			<li><a href="">Instagram  </a></li>
+			<li><a href="">Тех. підтримка </a></li>
+		</ul>
+	</footer>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+	</script>
+	<script>
+		$( document ).ready(function(){
+			$('.toggle_li').on('click', function(){
+				$('.menu_li').toggleClass('open');
+			})
+		})
+	</script>
+</body>
+</html>
