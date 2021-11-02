@@ -54,3 +54,4 @@ def callback(call):
 client.polling(interval=0)
 
 #гит
+#ПИздец
