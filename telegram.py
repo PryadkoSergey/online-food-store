@@ -54,5 +54,4 @@ def callback(call):
 client.polling(interval=0)
 
 #гит
-Print("Hello")
-print("Sergey")
+#ПИздец
