@@ -55,3 +55,4 @@ client.polling(interval=0)
 
 #гит
 print("Hello LOX")
+print("Hello gg ")
