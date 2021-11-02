@@ -54,5 +54,6 @@ def callback(call):
 client.polling(interval=0)
 
 #гит
+print("Hello 1234")
 print("Hello LOX")
 print("Hello gg ")
