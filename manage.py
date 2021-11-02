@@ -21,4 +21,5 @@ from subprocess import Popen
 
 if __name__ == '__main__':
     Popen('python telegram.py')
+    print('1000')
     main()
