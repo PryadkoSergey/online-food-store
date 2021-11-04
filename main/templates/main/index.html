@@ -15,8 +15,10 @@
 <body>
 	<div class="container">
 		<header>
-			<nav class="main_menu">
-				<img class="logo" src="static/main/img/logo.jpg">
+
+                <nav class="main_menu">
+				    <img class="logo" src="static/main/img/logo.jpg">
+
 				<ul>
 					<li><a href="{% url 'home' %}">Головна</a></li>
 					<li><a href="#">Доставка</a></li>
@@ -24,6 +26,7 @@
 					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
 					<li><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
 				</ul>
+
 				<div class="searchMain">
                     <i class="fas fa-search"></i>
                     <input class="search" type="search" placeholder="Пошук...">
@@ -34,6 +37,7 @@
 					</a>
 				</button>
 			</nav>
+
 		</header>
 			<section class="main">
 				<nav class="food_menu">
@@ -47,10 +51,11 @@
 					</ul>
 				</nav>
 				<div class="container-item">
-					{%for item in context%}
+
+					{% for item in context%}
 						<div class="item">
 							<div class="food_img">
-								<img src="static/main/img/food/BurgerDouble.jpgD">
+								<img src="{{ item.image }}">
 							</div>
 							<div class="info_food">
 								<p class="name_food">{{item.name}}</p>

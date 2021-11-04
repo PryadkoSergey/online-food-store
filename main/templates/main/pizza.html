@@ -42,87 +42,21 @@
 					</ul>
 				</nav>
 				<div class="container-item">
-				<div class="item">
-					<div class="food_img">
-						<img src="static/main/img/food/PizzaMeatBoom.jpg">
-					</div>
-					<div class="info_food">
-						<p class="name_food">Піца "М'ясний бум"</p>
-						<p class="price">159 грн.</p>
-					</div>
-					<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-				</div>
-				<div class="item">
-					<div class="food_img">
-						<img src="static/main/img/food/PizzaUkrainian.jpg">
-					</div>
-					<div class="info_food">
-						<p class="name_food">Піца "Українська"</p>
-						<p class="price">155 грн.</p>
-					</div>
-					<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-				</div>
-				<div class="item">
-					<div class="food_img">
-						<img src="static/main/img/food/PizzaSeafood.jpg">
-					</div>
-					<div class="info_food">
-						<p class="name_food">Піца "Дари моря"</p>
-						<p class="price">199 грн.</p>
-					</div>
-					<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-				</div>
-				<div class="item">
-					<div class="food_img">
-						<img src="static/main/img/food/PizzaCaesar.jpg">
-					</div>
-					<div class="info_food">
-						<p class="name_food">Піца "Цезар"</p>
-						<p class="price">175 грн.</p>
-					</div>
-					<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-				</div>
-				<div class="item">
-					<div class="food_img">
-						<img src="static/main/img/food/PizzaPepperoni.jpg">
-					</div>
-					<div class="info_food">
-						<p class="name_food">Піца "Пепероні"</p>
-						<p class="price">149 грн.</p>
-					</div>
-					<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-				</div>
-				<div class="item">
-					<div class="food_img">
-						<img src="static/main/img/food/PizzaMargarita.jpg">
-					</div>
-					<div class="info_food">
-						<p class="name_food">Піца "Маргарита"</p>
-						<p class="price">95 грн.</p>
-					</div>
-					<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-				</div>
-				<div class="item">
-					<div class="food_img">
-						<img src="static/main/img/food/PizzaEuropa.jpg">
-					</div>
-					<div class="info_food">
-						<p class="name_food">Піца "Європейська"</p>
-						<p class="price">155 грн.</p>
-					</div>
-					<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-				</div>
-				<div class="item">
-					<div class="food_img">
-						<img src="static/main/img/food/PizzaTropikano.jpg">
-					</div>
-					<div class="info_food">
-						<p class="name_food">Піца "Тропікано"</p>
-						<p class="price">155 грн.</p>
-					</div>
-					<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-				</div>
-			</div>
+                {#% if item in category %#}
+				{% for item in context %}
+						<div class="item">
+							<div class="food_img">
+								<img src="{{ item.image }}">
+							</div>
+							<div class="info_food">
+								<p class="name_food">{{item.name}}</p>
+								<p class="price">{{item.price}}</p>
+							</div>
+							<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+						</div>
+					{% endfor %}
+                {#% endif %#}
+                </div>
 		</section>
 	</div>
 	<footer>

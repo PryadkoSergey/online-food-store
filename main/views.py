@@ -9,7 +9,9 @@ def index (request):
 
 
 def pizza (request):
-    return render(request,'main/pizza.html' )
+    context = Product.objects.order_by('created')[:8]
+    return render(request,'main/pizza.html',{'context':context} )
+
 
 def discount (request):
     return render(request,'main/discount.html' )
