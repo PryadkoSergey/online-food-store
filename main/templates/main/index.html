@@ -28,7 +28,11 @@
                     <i class="fas fa-search"></i>
                     <input class="search" type="search" placeholder="Пошук...">
                 </div>
-				<button class="cart-shop" onclick='window.location.href = "{% url 'cart' %}"'><i class="fas fa-shopping-cart"></i></button>
+				<button class="cart-shop">
+					<a href="{% url 'cart' %}">
+						<i class="fas fa-shopping-cart"></i>
+					</a>
+				</button>
 			</nav>
 		</header>
 			<section class="main">
@@ -43,87 +47,19 @@
 					</ul>
 				</nav>
 				<div class="container-item">
-					<div class="item">
-						<div class="food_img">
-							<img src="static/main/img/food/PizzaMeatBoom.jpg">
+					{%for item in context%}
+						<div class="item">
+							<div class="food_img">
+								<img src="static/main/img/food/BurgerDouble.jpgD">
+							</div>
+							<div class="info_food">
+								<p class="name_food">{{item.name}}</p>
+								<p class="price">{{item.price}}</p>
+							</div>
+							<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
 						</div>
-						<div class="info_food">
-							<p class="name_food">Піца "М'ясний бум"</p>
-							<p class="price">159 грн.</p>
-						</div>
-						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-					</div>
-					<div class="item">
-						<div class="food_img">
-							<img src="static/main/img/food/PizzaUkrainian.jpg">
-						</div>
-						<div class="info_food">
-							<p class="name_food">Піца "Українська"</p>
-							<p class="price">155 грн.</p>
-						</div>
-						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-					</div>
-					<div class="item">
-						<div class="food_img">
-							<img src="static/main/img/food/PizzaSeafood.jpg">
-						</div>
-						<div class="info_food">
-							<p class="name_food">Піца "Дари моря"</p>
-							<p class="price">199 грн.</p>
-						</div>
-						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-					</div>
-					<div class="item">
-						<div class="food_img">
-							<img src="static/main/img/food/PizzaCaesar.jpg">
-						</div>
-						<div class="info_food">
-							<p class="name_food">Піца "Цезар"</p>
-							<p class="price">175 грн.</p>
-						</div>
-						
-						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-					</div>
-					<div class="item">
-						<div class="food_img">
-							<img src="static/main/img/food/SushiPhiladelphia.jpg">
-						</div>
-						<div class="info_food">
-							<p class="name_food">Суші "Філадельфія"</p>
-							<p class="price">110 грн.</p>
-						</div>
-						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-					</div>
-					<div class="item">
-						<div class="food_img">
-							<img src="static/main/img/food/SushiCalifornia.jpg">
-						</div>
-						<div class="info_food">
-							<p class="name_food">Суші "Каліфорнія"</p>
-							<p class="price">109 грн.</p>
-						</div>
-						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-					</div>
-					<div class="item">
-						<div class="food_img">
-							<img src="static/main/img/food/BurgerStandart.jpg">
-						</div>
-						<div class="info_food">
-							<p class="name_food">Бургер "Стандарт"</p>
-							<p class="price">55 грн.</p>
-						</div>
-						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-					</div>
-					<div class="item">
-						<div class="food_img">
-							<img src="static/main/img/food/BurgerDouble.jpg">
-						</div>
-						<div class="info_food">
-							<p class="name_food">Бургер "Дабл"</p>
-							<p class="price">75 грн.</p>
-						</div>
-						<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
-					</div>
+					{% endfor %}
+
 				</div>
 		</section>
 	</div>
