@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
 
 def index (request):
-    return render(request,'main/index.html' )
+    #context = Product.objects.all()
+    context = Product.objects.order_by('created')[:8]
+    return render(request,'main/index.html', {'context':context})
 
 
 def pizza (request):
