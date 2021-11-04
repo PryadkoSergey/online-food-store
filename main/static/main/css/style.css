@@ -76,6 +76,9 @@ header{
 }
 
 .cart-shop {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 32px;
 	height: 100px;
 	background: white;
@@ -226,6 +229,33 @@ footer ul{
 	color: while;
 }
 
+.pagination{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	height: 100px;
+	grid-column-start: 1;
+	grid-column-end: -1;
+}
+
+.page_button{
+	display: inline-block;
+	padding: 10px 30px;
+	background: black;
+	color: white;
+	border-radius: 15px;
+	border: 1px solid #000;
+	cursor: pointer;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+	transition: 0.3s;
+}
+
+.page_button:hover{
+	transform: scale(1.05);
+	transition: 0.3s;
+}
+
 @media all and (max-width: 1200px){
 	.main_menu ul{
 		display: flex;
@@ -293,6 +323,7 @@ footer ul{
 	.menu_li.open{
 		display: flex;
 	}
+
 	footer{
 		margin-top: 80px;
 		height: 150px;

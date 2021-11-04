@@ -3,10 +3,22 @@ from django.http import HttpResponse
 from .models import Product
 from .models import Category
 
+from django.core.paginator import Paginator
+from django.views.generic import ListView
+
+
+
+class ContactListView(ListView):
+    paginate_by = 2
+    model = Product
+
 def index (request):
-    #context = Product.objects.all()
-    context = Product.objects.order_by('created')[:8]
-    return render(request,'main/index.html', {'context':context})
+    contact_list = Product.objects.all()
+    paginator = Paginator(contact_list, 8) # Show 25 contacts per page.
+
+    page_number = request.GET.get('page')
+    context = paginator.get_page(page_number)
+    return render(request, 'main/index.html', {'context': context})
 
 
 def pizza (request):
@@ -35,7 +47,11 @@ def burger (request):
     return render(request,'main/burger.html',{'context':context, 'category': category})
 
 def discount (request):
-    context = Product.objects.all()
+    contact_list = Product.objects.all()
+    paginator = Paginator(contact_list, 8) # Show 25 contacts per page.
+
+    page_number = request.GET.get('page')
+    context = paginator.get_page(page_number)
     return render(request,'main/discount.html',{'context':context} )
 
 

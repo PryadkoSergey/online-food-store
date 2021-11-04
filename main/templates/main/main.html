@@ -27,11 +27,9 @@
                <i class="fas fa-search"></i>
                <input class="search" type="search" placeholder="Пошук...">
             </div>
-            <button class="cart-shop">
-               <a href="{% url 'cart' %}">
-                  <i class="fas fa-shopping-cart"></i>
-               </a>
-            </button>
+				<a class="cart-shop" href="{% url 'cart' %}">
+					<i class="fas fa-shopping-cart"></i>
+				</a>
          </nav>
 		</header>
 			<section class="main">
@@ -51,6 +49,9 @@
                {% endblock content %}
 				</div>
 		</section>
+		{% if context.paginator.num_pages > 1 %}
+			{% include "main/includes/paginator.html" %}
+		{% endif %}
 	</div>
 	<footer>
 		<ul>
