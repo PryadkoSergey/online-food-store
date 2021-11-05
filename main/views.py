@@ -35,12 +35,7 @@ def drink (request):
     context = Product.objects.all()
     category = Category.objects.get(pk = 4)
     return render(request,'main/drink.html',{'context':context, 'category': category})
-
-def cart (request):
-    context = Product.objects.all()
-    category = Category.objects.get(pk = 1)
-    return render(request,'main/cart.html',{'context':context, 'category': category})
-
+    
 def burger (request):
     context = Product.objects.all()
     category = Category.objects.get(pk = 2)
@@ -53,6 +48,11 @@ def discount (request):
     page_number = request.GET.get('page')
     context = paginator.get_page(page_number)
     return render(request,'main/discount.html',{'context':context} )
+
+
+def cart (request):
+    context = Product.objects.all()
+    return render(request,'main/cart.html',{'context':context})
 
 
 
