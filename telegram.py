@@ -1,5 +1,6 @@
 import telebot
 from telebot import types
+#from .models import Order
 
 client = telebot.TeleBot('1954889691:AAEIVjuvH2jofswxG_1wj4-zzRwl88LDYhs')
 
@@ -9,7 +10,17 @@ def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard = True)
     item1 = types.KeyboardButton('Меню')
     markup.add(item1)
-    client.send_message(message.chat.id,'Введите номер заказа: '.format(message.from_user), reply_markup = markup)
+    number = message.text.split()[-1]
+    print(number) #послученый id заказа
+    client.send_message(message.chat.id, ('Номер заказа ' + number))
+    # for item in Order.objects.all():
+    #     print(item.id)
+    #client.send_message(message.chat.id,'Введите номер заказа: '.format(message.from_user), reply_markup = markup)
+
+    # for item in Order.objects.all():
+    #     print(item.id)
+
+    #client.send_message(message.chat.id,'Введите номер заказа: '.format(message.from_user), reply_markup = markup)
 
 #Menu
 @client.message_handler(content_types = ['text'])
