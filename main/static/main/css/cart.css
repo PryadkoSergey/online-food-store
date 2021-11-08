@@ -56,7 +56,7 @@ body {
 .delete-btn {
   width: 50px;
   height: 50px;
-  background: url("images/x.png") no-repeat right;
+  background: url("images/delete.png") no-repeat right;
   background-size: 25%;
 }
 
@@ -130,6 +130,11 @@ button[class*=btn] {
   box-shadow: 5px 5px 10px rgb(0 0 0 / 40%);
 }
 
+.quantity button:hover {
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
 .total-price {
   width: 100%;
   padding-top: 27px;
@@ -160,6 +165,11 @@ button[class*=btn] {
   cursor: pointer;
   margin-bottom: 2%;
   box-shadow: 5px 5px 10px rgb(0 0 0 / 40%);
+  }
+
+  .button-order:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
   }
 
 @media (max-width: 1920px) {
@@ -222,5 +232,65 @@ button[class*=btn] {
   .logo{
     height: 120px;
     margin-left: 30px;
+  }
+}
+
+@media (max-width: 4916px) {
+  .shopping-cart {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .image img {
+    width: 50%;
+  }
+
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+
+  .buttons {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 7916px) {
+  .shopping-cart {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .image img {
+    width: 50%;
+  }
+
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+
+  .buttons {
+    margin-right: 20px;
   }
 }
