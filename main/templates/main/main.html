@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +29,8 @@
                <i class="fas fa-search"></i>
                <input class="search" type="search" placeholder="Пошук...">
             </div>
-				<a class="cart-shop" href="{% url 'cart' %}">
+				<a href="{% url 'cart' %}" class="cart-shop">
+					<p id="num_cart_p">1</p>
 					<i class="fas fa-shopping-cart"></i>
 				</a>
          </nav>
@@ -43,11 +46,11 @@
 						<li class="menu_li"><a href="{% url 'drink' %}"><i class="fas fa-coffee"></i> Напої</a></li>
 					</ul>
 				</nav>
-				<div class="container-item">
-               {% block content %} 
-    
-               {% endblock content %}
-				</div>
+
+				{% block content %} 
+	
+				{% endblock content %}
+
 		</section>
 		{% if context.paginator.num_pages > 1 %}
 			{% include "main/includes/paginator.html" %}
@@ -62,8 +65,8 @@
 			<li><a href="">Тех. підтримка </a></li>
 		</ul>
 	</footer>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="{% static 'main/script.js' %}"></script>
 	<script>
 		$( document ).ready(function(){
 			$('.toggle_li').on('click', function(){

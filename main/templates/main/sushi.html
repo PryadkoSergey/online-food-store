@@ -1,6 +1,7 @@
 {% extends "main/main.html" %}
 
 {% block content %}
+<div class="container-item">
 	{% for item in context%}
 		{% if item.category == category %}
 			<div class="item">
@@ -15,4 +16,5 @@
 			</div>
 		{% endif %}
 	{% endfor %}
+</div>
 {% endblock content %}

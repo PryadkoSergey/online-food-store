@@ -1,16 +1,18 @@
 {% extends "main/main.html" %}
 
 {% block content %}
-	{% for item in context%}
-	<div class="item">
-		<div class="food_img">
-			<img src="media/{{ item.image|upper }}">
+	<div class="container-item">
+		{% for item in context%}
+		<div class="item">
+			<div class="food_img">
+				<img src="media/{{ item.image|upper }}">
+			</div>
+			<div class="info_food">
+				<p class="name_food">{{item.name|upper}}</p>
+				<p class="price">{{item.price|upper}}</p>
+			</div>
+			<button onclick="add('{{item.id|upper}}')" class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
 		</div>
-		<div class="info_food">
-			<p class="name_food">{{item.name|upper}}</p>
-			<p class="price">{{item.price|upper}}</p>
-		</div>
-		<button class="shopping-cart" title="Добавити у кошик"><i class="fa fa-shopping-cart"></i></button>
+		{% endfor %}
 	</div>
-	{% endfor %}
 {% endblock content %}
